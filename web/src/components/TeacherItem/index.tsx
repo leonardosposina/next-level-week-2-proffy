@@ -1,33 +1,53 @@
 import React from 'react';
+import api from '../../services/api';
 
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
 
 import './styles.css';
 
-function TeacherItem() {
+export interface Teacher {
+  id: number;
+  name: string;
+  avatar: string;
+  whatsapp: string;
+  bio: string;
+  subject: string;
+  cost: number;
+}
+
+interface TeacherItemProps {
+  teacher: Teacher
+};
+
+const TeacherItem: React.FunctionComponent<TeacherItemProps> = ({ teacher }) => {
+
+  function createNewConnection() {
+    api.post('connections', { user_id: teacher.id });
+  }
+
   return (
     <article className="teacher-item">
       <header>
-        <img src="https://avatars2.githubusercontent.com/u/13419018?s=460&u=81e631c9f84e20289c4ba519237fde95360d772b&v=4" alt="Eu"/>
+        <img src={ teacher.avatar } alt={ teacher.name } />
         <div>
-          <strong>Leonardo Sposina</strong>
-          <span>Programação</span>
+          <strong>{ teacher.name }</strong>
+          <span>{ teacher.subject }</span>
         </div>
       </header>
-
-      <p>
-        Explica pro Product Onwer que a compilação final do programa corrigiu o bug da execução parelela de funções em multi-threads.
-      </p>
-      
+      <p>{ teacher.bio }</p>
       <footer>
         <p>
           Preço/Hora
-          <strong>R$ 20,00</strong>
+          <strong>{ teacher.cost }</strong>
         </p>
-        <button type="button">
-          <img src={whatsappIcon} alt="WhatsApp"/>
+        <a 
+          href={ `https://wa.me/${ teacher.whatsapp }` }
+          onClick={ createNewConnection }
+          target="_blank"
+        >
+          <img src={ whatsappIcon } alt="WhatsApp" />
           Entrar em contato
-        </button>
+        </a>
       </footer>
     </article>
   );
