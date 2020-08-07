@@ -13,9 +13,8 @@ export default class ClassesController {
   async index(request: Request, response: Response) {
     const filters = request.query;
 
-    if (!filters.week_day || !filters.subject || !filters.time) {
-      return response.status(400).json({error: "Missing filters to search for classes."})
-    }
+    if (!filters.week_day || !filters.subject || !filters.time)
+      return response.status(400).json({ error: "Missing filters to search for classes." });
 
     const subject = filters.subject as string;
     const week_day = filters.week_day as string;
@@ -70,7 +69,7 @@ export default class ClassesController {
   
       const class_id = insertedClassesId[0];
   
-      const classSchedule = schedule.map((scheduleItem: ScheduleItem) => {
+      const classSchedule = schedule.map( (scheduleItem: ScheduleItem) => {
         return {
           class_id,
           week_day: scheduleItem.week_day,
