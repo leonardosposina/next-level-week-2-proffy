@@ -12,8 +12,16 @@ Instrutor: [Diego Fernandes (CTO Rocketseat)](https://github.com/diego3g)
 
 - [x] TypeScript
 - [x] JavaScript
-- [x] React + axios
-- [x] Node.js + Express.js + Knex.js
+- [x] React + React Native + axios
+- [x] Node.js + Express.js + Knex.js + Sqlite3
+
+---
+
+### Projeto
+
+- [x] Frontend
+- [x] Backend
+- [ ] Mobile
 
 ---
 
@@ -32,7 +40,7 @@ Instrutor: [Diego Fernandes (CTO Rocketseat)](https://github.com/diego3g)
 
 ---
 
-### Insomnia
+### Insomnia [Rest Client]
 
 - [Insomnia Environment Export](docs/Insomnia_export.json)
 
@@ -40,7 +48,7 @@ Instrutor: [Diego Fernandes (CTO Rocketseat)](https://github.com/diego3g)
 
 ### Extra Mile
 
-- [Notion](https://www.notion.so/Vers-o-2-0-Proffy-eefca1b981694cd0a895613bc6235970)
+- [Feature list](https://www.notion.so/Vers-o-2-0-Proffy-eefca1b981694cd0a895613bc6235970)
 
 ---
 
