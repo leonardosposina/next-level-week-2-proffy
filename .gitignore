@@ -1,2 +1,7 @@
+node_modules/
+
+# MacOS
 .DS_Store
-node_modules
+
+# Windows
+thumbs.db
